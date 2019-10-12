@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { PerroCalienteModule } from './perro-caliente/perro-caliente.module';
 import { VentasModule } from './ventas/ventas.module';
+import { LoginController } from './login/login.controller';
+import { DashboardController } from './dashboard/dashboard.controller';
 
 @Module({
   imports: [
@@ -15,7 +17,7 @@ import { VentasModule } from './ventas/ventas.module';
     PerroCalienteModule,
     VentasModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, LoginController, DashboardController],
   providers: [AppService],
 })
 export class AppModule {}

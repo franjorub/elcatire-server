@@ -4,6 +4,8 @@ import { Model } from 'mongoose';
 import { Users } from './users.schema';
 
 @Injectable()
+// mario dice que esto esta mal, ANIMAL es en PLURAR XD
+// punto extran por el modelo injectado correctamente. D:
 export class UsersService {
   constructor(
     @InjectModel('Users') private readonly UsersSchema: Model<Users>,
@@ -16,7 +18,6 @@ export class UsersService {
   }): Promise<Users> {
     const createdUser = new this.UsersSchema({ ...user });
     const result = await createdUser.save();
-    console.log(result);
     return result;
   }
 
@@ -25,7 +26,6 @@ export class UsersService {
   }
 
   async findOne(key: { [findKey: string]: string }): Promise<Users> {
-    console.log(key);
     return await this.UsersSchema.findOne(key).exec();
   }
 }
