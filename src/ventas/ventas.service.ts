@@ -13,6 +13,11 @@ export class VentasService {
   async create(venta: {
     fecha: Date;
     perros: PerroCaliente[];
+    cliente: {
+      nombre: string;
+      genero: string;
+      cedula: string;
+    };
   }): Promise<Ventas> {
     const createdVenta = new this.ventasSchema(venta);
     const result = await createdVenta.save();

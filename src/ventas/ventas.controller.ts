@@ -29,6 +29,11 @@ export class VentasController {
     body: {
       fecha: Date;
       perros: PerroCaliente[];
+      cliente: {
+        nombre: string;
+        genero: string;
+        cedula: string;
+      };
     },
   ) {
     this.ventasService
